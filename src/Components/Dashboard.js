@@ -18,7 +18,7 @@ export default function Dashboard() {
             setError("Failed to log out");
         }
     }
-    if(currentUser && !currenUser.displayName) {
+    if(currentUser && !currentUser.displayName) {
       return(
         <Redirect to="/update-profile" />
       );
