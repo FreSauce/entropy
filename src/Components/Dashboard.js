@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Button, Alert, Container, Row, Col } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 
 export default function Dashboard() {
     const [error, setError] = useState("");
@@ -18,7 +18,11 @@ export default function Dashboard() {
             setError("Failed to log out");
         }
     }
-
+    if(currentUser && !currenUser.displayName) {
+      return(
+        <Redirect to="/update-profile" />
+      );
+    }
     return (
         <>
           <Card>
@@ -26,6 +30,7 @@ export default function Dashboard() {
               <h2 className="text-center mb-4">Profile</h2>
               {error && <Alert variant="danger">{error}</Alert>}
               <strong>Email:</strong> {currentUser.email}
+              <strong>Display Name:</strong> {currentUser.displayName}
               <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
                 Update Profile
               </Link>
