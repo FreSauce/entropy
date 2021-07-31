@@ -13,13 +13,16 @@ const Sidebar = () => {
             >
                 <div className="sidebar-sticky"></div>
                 <Nav.Item>
-                    <Nav.Link href="/" >Active</Nav.Link>
+                    <Nav.Link href="/" >Dashboard</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="/add-post">Link</Nav.Link>
+                    <Nav.Link href="/random-posts">Random Posts</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link href="/user-posts">Link</Nav.Link>
+                    <Nav.Link href="/user-posts">Your Posts</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/add-post">Add Post</Nav.Link>
                 </Nav.Item>
             </Nav>
         </>

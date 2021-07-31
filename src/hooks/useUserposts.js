@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { firestore as projectFirestore } from '../firebase';
 
-const useFirestore = (collection) => {
+const useUserposts = (userid) => {
   const [docs, setDocs] = useState([]);
 
   useEffect(() => {
-    const unsub = projectFirestore.collection(collection)
+    const unsub = projectFirestore.collection('post').where("uid","==",userid)
       .orderBy('createdAt', 'desc')
       .onSnapshot(snap => {
         let documents = [];
@@ -18,9 +18,9 @@ const useFirestore = (collection) => {
     return () => unsub();
     // this is a cleanup function that react will run when
     // a component using the hook unmounts
-  }, [collection]);
+  }, [userid]);
 
   return { docs };
 }
 
-export default useFirestore;
+export default useUserposts;

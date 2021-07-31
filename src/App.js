@@ -12,6 +12,7 @@ import Addpost from "./Components/Addpost"
 import Userposts from "./Components/Userposts"
 import Sidebar from "./Components/Sidebar"
 import "./App.css"
+import RandomPosts from "./Components/Randomposts"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <PrivateRoute exact path="/" component={Dashboard} />
               <PrivateRoute exact path="/add-post" component={Addpost} />
               <PrivateRoute exact path="/user-posts" component={Userposts} />
+              <PrivateRoute exact path="/random-posts" component={RandomPosts} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />

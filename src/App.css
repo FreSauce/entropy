@@ -43,15 +43,10 @@
   top:0;
   left: 20vw;
 }
-#status{
-  /* border: 1px solid black; */
-  height: 100vh;
-  /* width: 20vw; */
-  background-color: #8757DF;
-  padding:2vw;
-  color: white;
-  line-height: 200%;
-  text-align: left;
 
+.userpost {
 
+}
+.postimg {
+  height: 30vh;
 }
