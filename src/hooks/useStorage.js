@@ -26,9 +26,10 @@ const useStorage = (title, file) => {
       async () => {
         const random = Number(nanoid())
         const uid = currentUser.uid;
+        const name = currentUser.displayName;
         const url = await storageRef.getDownloadURL();
         const createdAt = timestamp();
-        await collectionRef.add({ title, uid, url, createdAt, random });
+        await collectionRef.add({ title, uid, url, createdAt, random, name });
         setUrl(url);
       }
     );

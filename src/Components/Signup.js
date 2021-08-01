@@ -37,12 +37,12 @@ export default function Signup() {
 
         return (
             <>
-                <Card>
+                <Card className="join-user">
                     <Card.Body>
                         <h2 className="text-center mb-4">Sign Up</h2>
                         {error && <Alert variant="danger">{error}</Alert>}
                         <Form onSubmit={handleSubmit}>
-                            <Form.Group id="email">
+                            <Form.Group className="form-grp" id="email">
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control
                                     type="email"
@@ -50,7 +50,7 @@ export default function Signup() {
                                     required
                                 />
                             </Form.Group>
-                            <Form.Group id="password">
+                            <Form.Group className="form-grp" id="password">
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control
                                     type="password"
@@ -58,7 +58,10 @@ export default function Signup() {
                                     required
                                 />
                             </Form.Group>
-                            <Form.Group id="password-confirm">
+                            <Form.Group
+                                className="form-grp"
+                                id="password-confirm"
+                            >
                                 <Form.Label>Password Confirmation</Form.Label>
                                 <Form.Control
                                     type="password"
@@ -67,18 +70,18 @@ export default function Signup() {
                                 />
                             </Form.Group>
                             <Button
+                                className="w-100 btnform"
                                 disabled={loading}
-                                className="w-100"
                                 type="submit"
                             >
                                 Sign Up
                             </Button>
                         </Form>
                     </Card.Body>
+                    <Card.Footer className="w-100 text-center mt-2">
+                        Already have an account? <Link to="/login">Log In</Link>
+                    </Card.Footer>
                 </Card>
-                <div className="w-100 text-center mt-2">
-                    Already have an account? <Link to="/login">Log In</Link>
-                </div>
             </>
         );
     }

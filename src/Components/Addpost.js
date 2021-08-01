@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FloatingLabel, Button, Alert } from "react-bootstrap";
+import { Form, FloatingLabel, Button, Alert, FormGroup } from "react-bootstrap";
 import ProgressBar from "./ProgressBar";
 
 const Addpost = () => {
@@ -31,28 +31,24 @@ const Addpost = () => {
   };
 
   return (
-    <>
+    <div className="card">
       {error && <Alert variant="danger">{error}</Alert>}
-      <h1 style={{ textAlign: "center" }}>ADD POST</h1>
-      <hr />
-      <br />
-      <Form className="" onSubmit={submitHandler}>
-        <FloatingLabel controlId="floatingTextarea1" label="Title*">
+      <Form className="addpost-form" onSubmit={submitHandler}>
+        <h1 className="addpost-header">ADD POST</h1>
+        <FormGroup controlId="floatingTextarea1" label="Add a Caption*">
           <Form.Control
+            className="addpost-input"
             as="textarea"
             ref={titleRef}
-            placeholder="Leave a Title"
-            style={{ height: "50px", width: "50%" }}
+            placeholder="Leave a Caption"
+            rows={3}
             required
           />
-        </FloatingLabel>
-        <br />
-        <Form.Group controlId="formFile" className="mb-3">
+        </FormGroup>
+        <Form.Group controlId="formFile" className="mb-3 attach">
           <Form.Label>Attach Img/Video </Form.Label>
-          <br />
-          <Form.Control type="file" onChange={fileChangeHandler} />
+          <Form.Control className="fileinp" type="file" onChange={fileChangeHandler} required />
         </Form.Group>
-        <br />
         {formValid && (
           <ProgressBar
             file={file}
@@ -61,11 +57,11 @@ const Addpost = () => {
             setFile={setFile}
           />
         )}
-        <Button variant="primary" type="submit">
+        <Button className="addpost-btn" variant="primary" type="submit">
           Submit
         </Button>
       </Form>
-    </>
+    </div>
   );
 };
 

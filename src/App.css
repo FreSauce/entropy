@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  height: 100vh;
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .App {
   text-align: center;
 }
@@ -36,17 +54,172 @@
     transform: rotate(360deg);
   }
 }
-.x{
-  position: absolute;
-  height: 100vh;
-  width: 80vw;
-  top:0;
-  left: 20vw;
+.join-user {
+  max-width: 400px;
+  margin:auto;
+  margin-top: 10em; /*Temporary*/
+}
+.form-grp {
+  /* margin: 5px; */
+  margin-bottom: 10px;
+}
+header {
+  display: block;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
 }
 
-.userpost {
-
+.btnform {
+ margin-top: 10px;
 }
+
 .postimg {
   height: 30vh;
+}
+/* 
+.Wrapping {
+  height: 100%;
+} */
+.sidebar {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(83, 122, 90, 0.5);
+  justify-content: center;
+  align-content: flex-start;
+  position: fixed;
+  backdrop-filter: blur(5px);
+}
+.link {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.Maincont {
+  margin-left: 25%;
+  /* background-color: #2c302e; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  padding: 5em;
+  /* height: 100vh; */
+}
+img {
+  width: 100%;
+
+}
+#media {
+  max-width: 40em;
+  /* height:400px; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  max-height: 30em;
+  overflow: hidden;
+}
+#media img {
+  object-fit: cover;
+  /* width: 100%; */
+  /* object-position: center; */
+}
+
+.card {
+  padding: 2em;
+  margin-bottom:3em;
+  padding-top: 1em;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+#userpfp {
+  width: 60px;
+}
+#userdate {
+  margin-left: 10px;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+#userdate div {
+  width: 100%;
+}
+
+#username {
+  font-weight:600;
+  font-size: 1.1em;
+}
+#date {
+  color: #aaaaaa;
+}
+.sidebar .btn {
+  padding: 2em;
+  margin:0;
+  border-radius: 0;
+  border: none ;
+  font-size: 1.1em;
+  font-weight: 600;
+  background-color: rgba(0,0,0,0);
+  outline: none;
+  box-shadow: none;
+}
+.sidebar .btn:hover {
+  outline: none;
+  background-color: rgba(0,0,0,0.3);
+  box-shadow: none;
+}
+.sidebar .btn:active {
+  background-color: rgba(0,0,0,0.3);
+  outline: none;
+  box-shadow: none;
+}
+.sidebar .btn:focus {
+  outline: none;
+  background-color: rgba(0,0,0,0.3);
+  box-shadow: none;
+}
+
+
+.sidebar-header {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-family: 'Righteous', cursive;
+  font-size: 3em;
+  color: aliceblue;
+}
+.sidebar-user {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-family: 'Righteous', cursive;
+  font-size: 1em;
+  color: aliceblue;
+}
+
+.addpost-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  padding: 1em;
+}
+.addpost-form *{
+  width:100%;
+  margin-bottom: 10px;
+}
+.attach {
+  margin-top: 2em;
+}
+
+.addpost-btn {
+  padding:1em;
+  margin-top: 5px;
+}
+
+.addpost-header {
+  text-align: center;
+  color: rgb(41, 39, 39);
+  font-weight: 600;
 }
