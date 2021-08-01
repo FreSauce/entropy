@@ -1,20 +1,9 @@
 import useUserposts from "../hooks/useUserposts";
 import { useAuth } from "../contexts/AuthContext";
+import { formatDistanceToNow } from "date-fns";
 import img from "../assets/cat.png";
 
 const Userposts = () => {
-    const toDate = (timestamp) => {
-        console.log(timestamp);
-        var date = new Date(timestamp);
-        
-        let time = "Date: "+date.getDate()+
-                  "/"+(date.getMonth()+1)+
-                  "/"+date.getFullYear()+
-                  " "+date.getHours()+
-                  ":"+date.getMinutes()+
-                  ":"+date.getSeconds()
-        return time;
-    }
     const { currentUser } = useAuth();
     const { docs } = useUserposts(currentUser.uid);
     console.log(docs);
@@ -30,7 +19,7 @@ const Userposts = () => {
                             </div>
                             <div id="userdate">
                             <div id="username">{doc.name}</div>
-                            <div id="date">{toDate(doc.createdAt.seconds)}</div>
+                            <div id="date">{formatDistanceToNow(doc.createdAt.toDate())}</div>
                             </div>
                         </div>
                         <div id="caption">{doc.title}</div>

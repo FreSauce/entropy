@@ -2,30 +2,15 @@ import { useEffect, useState } from "react";
 import { getRandomPosts } from "../hooks/getRandomposts";
 import { Card } from "react-bootstrap";
 import img from "../assets/cat.png";
+import { formatDistanceToNow } from "date-fns";
 
 const RandomPosts = () => {
-    const toDate = (timestamp) => {
-        var date = new Date(timestamp);
-
-        let time =
-            date.getDate() +
-            "/" +
-            (date.getMonth() + 1) +
-            "/" +
-            date.getFullYear() +
-            " " +
-            date.getHours() +
-            ":" +
-            date.getMinutes() +
-            ":" +
-            date.getSeconds();
-        return time;
-    };
-
+    
+    
     const [docs, setDocs] = useState([]);
     useEffect(() => {
         getRandomPosts(10).then((data) => {
-            console.log(data);
+            console.log(data[0].createdAt.toDate());
             setDocs(data);
         });
     }, []);
@@ -41,7 +26,7 @@ const RandomPosts = () => {
                             </div>
                             <div id="userdate">
                             <div id="username">{doc.name}</div>
-                            <div id="date">{toDate(doc.createdAt.seconds)}</div>
+                            <div id="date">{formatDistanceToNow(doc.createdAt.toDate())}</div>
                             </div>
                         </div>
                         <div id="caption">{doc.title}</div>

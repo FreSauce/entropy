@@ -14,6 +14,7 @@ const Addpost = () => {
     if (selected && typeAllowed.includes(selected.type)) {
       setError(null);
       setFile(selected);
+      console.log(selected);
     } else if (selected) {
       setFile(null);
       setError(
@@ -28,6 +29,7 @@ const Addpost = () => {
       setError("Please enter the title");
     }
     setFormValid(true);
+
   };
 
   return (
